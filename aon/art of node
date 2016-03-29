@@ -1,0 +1,65 @@
+Learn Node Interactively
+-learning by writing code is the best way to learn to code
+-use nodeschool, do ALL of the exercises
+
+Understanding Node
+-an open source platform designed to help us write js programs that talk to networks, filesystems or other input/output sources
+-Examples of i/o:
+  -server filesystem
+  -apple push notifications
+  -facebook api
+  -couch db
+  -redis db
+  -twitter api
+  -caching proxy
+  -amazon s3
+  -web browser/mobile app: web sockets, http + json
+-a single node process can act as the broker between all the different i/o endpoints
+
+-Node is not:
+  -a web framework
+  -a programming language
+
+-Node is:
+  -designed to be simple and relatively easy to understand
+  -useful for i/o based programs that need to be fast and handle a lot of connections
+
+-At a lower level node can be described as a tool for writing two major types of programs
+  -network programs using the protocols of the web: HTTP, TCP, UDP, DNS and SSL
+  -programs that read and write data to the filesystem or local processes/memory
+
+-What's an i/o based program?
+  -Databases (e.g. MySQL, PostgreSQL, MongoDB, Redis, CouchDB)
+  -APIs (e.g. Twitter, Facebook, Apple Push Notifications)
+  -HTTP/WebSocket connections (from users of a web app)
+  -Files (image resizer, video editor, internet radio)
+
+-node does i/o in a way that is asynchronous
+  -this lets it handle lots of things simultaneously
+
+Core Modules
+-node has a small group of core modules that are represented as the public api
+  -fs: for working with filesystems
+  -net, http, dgram: for working with networks
+  -dns: asynchronously resolving dns queries
+  -os: for getting os specific information
+  -buffer: for allocating binary chunks of memory
+  -url, querystring, path: for parsing urls and paths
+-most, if not all, of the modules in node's core are there to support node's main use case
+  -writing fast programs that talk to filesystems or networks
+
+NOTE: Node handles i/o with callbacks, events, streams, and modules
+  -learn these four things to be able to go into any module in node core and have a basic understanding of how to interact with it
+
+Callbacks
+-the most important topic to understand if you want to learn node
+
+-nearly everything in node uses callbacks
+  -callbacks are functions executed asynchronously, or at a later time
+  -instead of reading code procedurally, top to bottom, async programs may execute functions at different times based on the order and speed that earlier functions happen
+  -see sync-example.js and async-example.js
+
+-usually, things that have to talk with hdds and networks will be asynchronous
+-if they just have to access things in memory or do some work n the cpu, they will be synchronous
+  -i/o is really slow
+  -talking to hdd is 100,000 times slower than talking to ram

@@ -1,0 +1,30 @@
+Intro
+-hypertext transfer protocol
+-application level protocol
+-the foundation for communication on the www
+
+Overview
+-HTTP is a TCP/IP based communication protocol, that is used to deliver data (HTML files, image files, query results, etc.) on the World Wide Web
+-default port is TCP 80, but other ports can be used as well.
+  -provides a standardized way for computers to communicate with each other.
+
+  Basic Features
+  -three basic features that make HTTP a simple but powerful protocol:
+
+    -HTTP is connectionless
+      -The HTTP client, i.e., a browser initiates an HTTP request and after a request is made, the client disconnects from the server and waits for a response.
+      -The server processes the request and re-establishes the connection with the client to send a response back.
+
+    -HTTP is media independent
+      -any type of data can be sent by HTTP as long as both the client and the server know how to handle the data content.
+        -It is required for the client as well as the server to specify the content type using appropriate MIME-type.
+
+    -HTTP is stateless
+      -HTTP is connectionless and it is a direct result of HTTP being a stateless protocol.
+      -The server and client are aware of each other only during a current request.
+        -Afterwards, both of them forget about each other.
+        -Due to this nature of the protocol, neither the client nor the browser can retain information between different requests across the web pages.
+
+  NOTE: HTTP/1.0 uses a new connection for each request/response exchange, where as HTTP/1.1 connection may be used for one or more request/response exchanges.
+
+  Basic Architecture
